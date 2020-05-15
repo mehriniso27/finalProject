@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+<head >
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>  
+    <div class="hero">
+        
+<div class="topnav">
+  <a  href="homegym.html">Home</a>
+  <a  class="active"  href="gymval.html">Sign Up</a>
+  <a href="trainers.html">Trainers</a>
+  <a   href="about.html">About</a>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    </div>  
+  
+<h1 style="color:black">Enrollment Fees</h1>
+<h2>Member 1</h2>
+<p>Adults: There is an initial one-time enrollment fee of $100 and an annual subscirption fee of $80</p>
+    
+<h2>Member 2</h2>
+ <p>Children over 10 and under 18: There is an initial one-time enrollment fee of $50 and an annual subscription fee of $40</p>
+<script>
+
+function ValidateData() {
+var errorMsg = "";
+var emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+var emergencyName = document.getElementById("EmegencyName").value;
+if (emergencyName == "") {
+errorMsg = "Please provide Emergency Contact Name";
+alert(errorMsg);
+return false;
+}
+var emergencyContact = document.getElementById("EmergencyContact").value;
+if (emergencyContact.length < 10) {
+errorMsg = "Please enter valid Emergency Contact";
+alert(errorMsg);
+return false;
+}
+var PaymentCash = document.getElementById("chkCash").checked;
+var PaymentCredit = document.getElementById("chkCredit").checked;
+if (!PaymentCash && !PaymentCredit) {
+errorMsg = "Please select at least one of Payment method";
+alert(errorMsg);
+return false;
+}
+
+
+var FirstName = document.getElementById("FirstName").value;
+if (FirstName == "") {
+errorMsg = "Please provide First Name";
+alert(errorMsg);
+return false;
+}
+var LastName = document.getElementById("LastName").value;
+if (LastName == "") {
+errorMsg = "Please provide Last Name";
+alert(errorMsg);
+return false;
+}
+var BirthDate = document.getElementById("BirthDate").value;
+if (BirthDate == "") {
+errorMsg = "Please provide Birth Date";
+alert(errorMsg);
+return false;
+}
+
+var male = document.getElementById("male").checked;
+var female = document.getElementById("female").checked;
+var other = document.getElementById("other").checked;
+if (!male && !female && !other) {
+errorMsg = "Please select Gender";
+alert(errorMsg);
+return false;
+}
+
+var Address = document.getElementById("Address").value;
+if (Address == "") {
+errorMsg = "Please provide Address";
+alert(errorMsg);
+return false;
+}
+var Tel = document.getElementById("Telephone").value;
+if (Tel.length < 10) {
+errorMsg = "Please enter valid Telephone number";
+alert(errorMsg);
+return false;
+}
+var Email = document.getElementById("Email").value;
+if (Email == "") {
+errorMsg = "Please provide Email";
+alert(errorMsg);
+return false;
+}
+if (!Email.match(emailRegExp)) {
+errorMsg = "Please provide valid Email";
+alert(errorMsg);
+return false;
+}
+var MemberType1 = document.getElementById("chkMemberType1").checked;
+var MemberType2 = document.getElementById("chkMemberType2").checked;
+if (!MemberType1 && !MemberType2) {
+errorMsg = "Please select at least one of Member Type";
+alert(errorMsg);
+return false;
+}
+var Signature = document.getElementById("Signature").value;
+if (Signature == "") {
+errorMsg = "Please provide Signature";
+alert(errorMsg);
+return false;
+}
+  
+
+  
+}
+function LoadData() {
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+dd = '0' + dd
+}
+if (mm < 10) {
+mm = '0' + mm
+}
+today = mm + '/' + dd + '/' + yyyy;
+document.getElementById("TodayDate").innerText = today;
+}
+</script>
+   
+    
+<body>
+    
+ 
+
+    
+
+<title>Membership</title>
+<script src="Validation.js"></script>
+
+    
+<body onload="LoadData()" style="width:100px;margin:0 40%;position:relative;left:-40px;">
+<form>
+<table style="width:100%;">
+<tr>
+<td>Name</td>
+<td></td>
+<td><input name="EmegencyName" id="EmegencyName" type="text" /></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td></td>
+<td><input name="EmergencyContact" id="EmergencyContact" type="text" /></td>
+</tr>
+
+<tr>
+<td>Payment</td>
+<td></td>
+<td>
+<input id="chkCash" name="PaymentCash" type="checkbox" /><label for="chkCash">Cash</label>
+<input id="chkCredit" name="PaymentCredit" type="checkbox" /><label for="chkCredit">Credit</label>
+</td>
+</tr>
+<tr>
+<td>First Name</td>
+<td></td>
+<td><input id="FirstName" name="FirstName" type="text" maxlength="50" /></td>
+</tr>
+<tr>
+<td>Last Name</td>
+<td></td>
+<td><input id="LastName" name="LastName" type="text" maxlength="50" /></td>
+</tr>
+<tr>
+<td>Birth Date</td>
+<td></td>
+<td><input id="BirthDate" name="BirthDate" type="date" /></td>
+</tr>
+<tr>
+<td>Gender</td>
+<td></td>
+<td>
+<input id="male" name="Gender" type="radio" value="Male" />Male
+<input id="female" name="Gender" type="radio" value="Female" />Female
+<input id="other" name="Gender" type="radio" value="Other" />Other
+</td>
+</tr>
+<tr>
+<td>Address</td>
+<td></td>
+<td>
+<textarea id="Address" name="Address" ></textarea>
+</td>
+</tr>
+<tr>
+<td>Telephone Number/Cell</td>
+<td></td>
+<td><input id="Telephone" name="Telephone" type="text" /></td>
+</tr>
+<tr>
+<td>Email</td>
+<td></td>
+<td><input id="Email" name="Email" type="email" /></td>
+</tr>
+<tr>
+<td>Member Type</td>
+<td></td>
+<td>
+<input id="chkMemberType1" name="MemberType1" type="checkbox" /><label for="chkMemberType1">Member Type1</label>
+<input id="chkMemberType2" name="MemberType2" type="checkbox" /><label for="chkMemberType2">Member Type2</label>
+</td>
+</tr>
+<tr>
+<td>
+<label>Date:</label>
+</td>
+<td></td>
+<td>
+<label id="TodayDate"></label>
+</td>
+</tr>
+<tr>
+<td>Signature</td>
+<td></td>
+<td>
+<input id="Signature" name="Signature" type="text" />
+</td>
+</tr>
+<tr>
+<td>
+
+<input style="style= width:100px;margin:0 45%;position:relative;left:-5px;" id="btnSubmit" type="submit" value="Submit" onclick="return ValidateData()" />
+</td>
+</tr>
+</table>
+
+
+
+
+
+    </form>
+        </body>
+     </body>
+    </body>
+</html>
+
+  

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+<head >
+<style>
+body {
+  margin: 0;
+  font-family: Optima, sans-serif;
+
+}
+
+.topnav {
+  text-align: right;
+  overflow: hidden;
+  background-color: #17202A  ;
+}
+
+.topnav a {
+ float: right;
+  color: #f2f2f2;
+  text-align: left;
+  padding: 17px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #17202A ;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #17202A;
+  color: white;
+    }
+.hero::before {
+background-color: white;
+background-size: cover;
+content: "";
+display: block;
+position:;
+top: 2;
+left: 2;
+width: 90%;
+height: 90%;
+z-index: -3;
+opacity: 8;
+}
+
+DIV.container {
+   height: 10em;
+   position: relative; 
+   color: white;
+    font-size:20px;}             
+div.container {
+   margin: 0;
+   position: absolute;               
+   top: 50%;                         
+   transform: translate(0, -50%) }
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+   
+</style>
+    </head>
+    <div class="hero">
+        
+<div class="topnav">
+  <a  href="index.html">Home</a>
+  <a  class="active"  href="gymval.html">Sign Up</a>
+  <a href="trainers.html">Trainers</a>
+  <a   href="about.html">About</a>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    </div>  
+</html>
